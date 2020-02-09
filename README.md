@@ -8,10 +8,10 @@ sonarqube: Sonarqube
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.sonarqube](https://galaxy.ansible.com/devops-toolbox.sonarqube)
+[https://galaxy.ansible.com/devopstoolbox.sonarqube](https://galaxy.ansible.com/devopstoolbox.sonarqube)
 
 ```bash
-ansible-galaxy install devops-toolbox.sonarqube
+ansible-galaxy install devopstoolbox.sonarqube
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: sonarqube is configured
       import_role:
-        name: devops-toolbox.sonarqube
+        name: devopstoolbox.sonarqube
       vars:
         sonarqube_packages_state: present
         sonarqube_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
