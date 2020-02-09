@@ -1,0 +1,19 @@
+---
+# defaults file for sonarqube
+
+sonarqube_packages_state: present
+sonarqube_remove_packages: true
+sonarqube_enable_service: true
+sonarqube_enable_selinux: true
+sonarqube_copy_templates: true
+sonarqube_firewall_configure: true
+sonarqube_firewall_rules:
+  - service: ssh
+  - port: 3389
+sonarqube_users:
+  - user: devops
+    group: docker
+sonarqube_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

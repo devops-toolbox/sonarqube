@@ -1,0 +1,10 @@
+---
+# Template configuration files for sonarqube
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ sonarqube_templates_copy }}"
+  when: sonarqube_copy_templates

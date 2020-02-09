@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+sonarqube_repos_create: "{{ _sonarqube_repos_create['all']
+  | union ( _sonarqube_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+sonarqube_repos_download: "{{ _sonarqube_repos_download['all']
+  | union ( _sonarqube_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+sonarqube_templates_copy: "{{ _sonarqube_templates_copy['all']
+  | union ( _sonarqube_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+sonarqube_services_enable: "{{ _sonarqube_services_enable['all']
+  | union ( _sonarqube_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+sonarqube_selinux_enable: "{{ _sonarqube_selinux_enable['all']
+  | union ( _sonarqube_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+sonarqube_packages_remove: "{{ _sonarqube_packages_remove['all']
+  | union ( _sonarqube_packages_remove[my_os]
+  | default([]) ) }}"
+sonarqube_packages_repos: "{{ _sonarqube_packages_repos['all']
+  | union ( _sonarqube_packages_repos[my_os]
+  | default([]) ) }}"
+sonarqube_packages_prereq: "{{ _sonarqube_packages_prereq['all']
+  | union ( _sonarqube_packages_prereq[my_os]
+  | default([]) ) }}"
+sonarqube_packages_install: "{{ _sonarqube_packages_install['all']
+  | union ( _sonarqube_packages_install[my_os]
+  | default([]) ) }}"
